@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagementSystem.DataAccessLayer\EmployeeManagementSystem.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EmployeeManagementSystem.Entities\EmployeeManagementSystem.Entities.csproj" />
   </ItemGroup>
 
 </Project>

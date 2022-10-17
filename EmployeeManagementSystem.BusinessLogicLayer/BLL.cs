@@ -1,5 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using EmployeeManagementSystem.DataAccessLayer.Models;
+using Employee = EmployeeManagementSystem.Entities.Entities.Employee;
 
 namespace EmployeeManagementSystem.BusinessLogicLayer;
 
@@ -19,5 +21,10 @@ public class BLL
     public void PostEmployee(Employee employee)
     {
         dal.PostEmployee(employee);
+    }
+    public void DeleteEmployee(int EmployeeId)
+    {
+        
+        dal.DeleteEmployee(EmployeeId);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Security.Cryptography.Xml;
-using EmployeeManagementSystem.DataAccessLayer.Models;
+using EmployeeManagementSystem.Entities.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +13,7 @@ namespace EmployeeManagementSystem.PresentationLayer.Controllers
         private BusinessLogicLayer.BLL bll;
         public EmployeeController()
         {
-            bll=new BusinessLogicLayer.BLL();
+            bll = new BusinessLogicLayer.BLL();
         }
         [HttpGet]
         [Route("GetEmployees")]
@@ -27,18 +27,13 @@ namespace EmployeeManagementSystem.PresentationLayer.Controllers
         {
             bll.PostEmployee(employee);
         }
-
         [Route("DeleteEmployee")]
         [HttpDelete]
         public void DeleteEmployee(int EmployeeId)
         {
-            var db = new EmployeeManagementContext();
-            Employee employee= new Employee();
-            employee=db.Employees.FirstOrDefault(x => x.EmployeeId==EmployeeId);
-            if (employee == null)
-                throw new Exception("Not Found");
-            db.Employees.Remove(employee);
-            db.SaveChanges();
+            bll.DeleteEmployee(EmployeeId);
         }
+
+
     }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagementSystem.BusinessLogicLayer\EmployeeManagementSystem.BusinessLogicLayer.csproj" />
     <ProjectReference Include="..\EmployeeManagementSystem.DataAccessLayer\EmployeeManagementSystem.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EmployeeManagementSystem.Entities\EmployeeManagementSystem.Entities.csproj" />
   </ItemGroup>
 
 </Project>

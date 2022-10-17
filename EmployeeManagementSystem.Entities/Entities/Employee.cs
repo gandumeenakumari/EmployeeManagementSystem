@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EmployeeManagementSystem.DataAccessLayer.Models
+namespace EmployeeManagementSystem.Entities.Entities
 {
     public partial class Employee
     {

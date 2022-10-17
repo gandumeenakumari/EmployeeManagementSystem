@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using EmployeeManagementSystem.Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -7,6 +8,8 @@ namespace EmployeeManagementSystem.DataAccessLayer.Models
 {
     public partial class EmployeeManagementContext : DbContext
     {
+        private DbSet<Employee> employees = null!;
+
         public EmployeeManagementContext()
         {
         }
@@ -16,8 +19,7 @@ namespace EmployeeManagementSystem.DataAccessLayer.Models
         {
         }
 
-        public virtual DbSet<Employee> Employees { get; set; } = null!;
-
+        public virtual DbSet<Employee> Employees { get => employees; set => employees = value; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
